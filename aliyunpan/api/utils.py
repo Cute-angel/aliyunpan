@@ -90,3 +90,9 @@ def parse_biz_ext(biz_ext):
     biz_ext = base64.b64decode(biz_ext).decode('gbk')
     logger.debug(biz_ext)
     return json.loads(biz_ext)
+
+class msg:
+    def __init__(self,_type,content):
+        self.type = _type       #info warn error 
+        self.time = time.localtime()
+        self.content = content      #string
